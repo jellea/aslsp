@@ -95,7 +95,7 @@ var sixhundred = sixhundred || (function ($) {
             Utils.settings.init();
             Events.init();
             window.onload = function () {
-              MIDI.loadPlugin({
+              /*MIDI.loadPlugin({
                 soundfontUrl: "./soundfont/",
                 instruments: [ "acoustic_grand_piano"], // or multiple instruments
                 callback: function() {
@@ -112,7 +112,8 @@ var sixhundred = sixhundred || (function ($) {
                     }
                   }
                 }
-              });
+              });*/
+              startSound();
             };
         }
     };
