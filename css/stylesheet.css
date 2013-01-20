@@ -1,0 +1,39 @@
+body {
+  background-size:  100%;
+  background-image: url("../images/Cage_Piano_1000.jpg");
+  overflow: hidden;
+  color: #fff;
+}
+body,div,p{
+  padding:0;
+  margin:0;
+}
+
+.timeslider{
+  display:          none;
+}
+
+.cagequote{
+  position: absolute;
+  width: 100%;
+  background: #175fcd;
+  height: 250px;
+  bottom:0;
+  font-size: 70px;
+  padding: 45px
+}
+
+.timeborder{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background: rgba(0,0,0,0.2);
+  z-index: 30;
+}
+
+.timeleft{
+  position: absolute;
+  right:0;
+  font-size: 30px;
+  padding: 80px;
+}
