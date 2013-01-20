@@ -101,12 +101,12 @@ var sixhundred = sixhundred || (function ($) {
                 callback: function() {
                   MIDI.programChange(0, 0);
                   MIDI.programChange(1, 118);
-                  for (i in aslsp){
+                  for (i in aslsp) {
                     for (x in aslsp[i]){
                       console.log(i);
                       if (aslsp[i][x]['v'] == 0){
                         MIDI.noteOff(0, aslsp[i][x]['n'], i/1000);
-                      }else{
+                      } else {
                         MIDI.noteOn(0, aslsp[i][x]['n'], aslsp[i][x]['v'], i/1000);
                       }
                     }
