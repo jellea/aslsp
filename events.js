@@ -6,7 +6,7 @@ sixhundred.Events = {
     document.onmousewheel = changeSlider;changeSlider
   },
   sliderChange: function(){
-    var el = document.getElementById("rangeslider"); 
+    var el = document.getElementById("rangeslider");
     el.addEventListener("click", function(){console.log($("#rangeslider").val())}, false);
     //MIDI.Sequencer.tempo(logslider($('#rangeslider').val()));
   }
@@ -34,6 +34,7 @@ function changeSlider(){
     currPos=parseInt($('#rangeslider').val())-(delta);
     $('#rangeslider').val(currPos);
     $('.timesslower span').text(Math.round(String(logslider(currPos))));
+    ratio = Math.round(String(logslider(currPos)));
 };
 
 function logslider(position) {
@@ -51,8 +52,14 @@ function logslider(position) {
   return Math.exp(minv + scale*(position-minp));
 }
 
-sixhundred.Events.ifScroll();
-sixhundred.Events.sliderChange();
+$(function(){
+  sixhundred.Events.ifScroll();
+  sixhundred.Events.sliderChange();
+  setInterval(function(){
+    //console.log(Math.round(context.currentTime)/(12*60*ratio)+"%");
+    $('.timeborder').css('width',Math.round(context.currentTime)/(12*60*ratio)+"%");
+    //console.log($('.timeborder'));
+  },200)});
 
 //12 min = 1
 //639 years = 639*365*24*60 min = 335858400 min = 27988200x slower

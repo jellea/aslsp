@@ -1,5 +1,7 @@
 var timestamps = Object.keys(aslsp)
 timestamps.sort(function(a, b){return parseInt(a, 10)-parseInt(b, 10)})
+var ratio = 1;
+
 
 function startSound() {
   context = new webkitAudioContext();
@@ -27,8 +29,8 @@ function finishedLoading(bufferList) {
 
   setInterval(function() {
     var i, note, timestamp, events, eventData, nodes, currentTime = context.currentTime;
-    console.log(parseInt(timestamps[0], 10) / 1000, context.currentTime)
-    if (parseInt(timestamps[0], 10) / 1000 < context.currentTime) {
+    //console.log(parseInt(timestamps[0], 10) / 1000, context.currentTime)
+    if ((parseInt(timestamps[0], 10) / 1000) * ratio < context.currentTime) {
       timestamp = timestamps.shift()
       events = aslsp[timestamp]
       for (i = 0; i < events.length; i++) {
